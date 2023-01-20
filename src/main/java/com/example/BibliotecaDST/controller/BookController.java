@@ -44,8 +44,6 @@ public class BookController {
     public HttpStatus addAllBooks(@RequestBody List<Book> data) {
         for (Book x :
                 data) {
-            if (bookRepo.existsById(x.getId()))
-                bookRepo.deleteById(x.getId());
 
             bookRepo.save(x);
 
