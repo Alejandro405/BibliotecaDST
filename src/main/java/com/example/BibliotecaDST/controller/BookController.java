@@ -3,14 +3,11 @@ package com.example.BibliotecaDST.controller;
 import com.example.BibliotecaDST.model.Book;
 import com.example.BibliotecaDST.repo.BookRepo;
 import com.example.BibliotecaDST.tools.BookNotFoundException;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.parsing.EmptyReaderEventListener;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.List;
 
 @RestController

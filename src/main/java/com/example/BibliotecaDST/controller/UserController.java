@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/user")
@@ -26,10 +27,27 @@ public class UserController {
         return new ResponseEntity<>(res, HttpStatus.OK);
     }
 
+    @PostMapping("/get")
+    public ResponseEntity<User> getUser(@RequestBody User user) {
+        ResponseEntity res = this.userRepo.findAll().stream().noneMatch(
+                x -> x.getNick().equals(user.getNick()) && x.getPassWord().equals(user.getPassWord())
+        )? new ResponseEntity(user, HttpStatus.OK) : null;
+
+        return res;
+    }
     @GetMapping("/get/{id}")
-    public ResponseEntity<User> getuser(@PathVariable("id") Long id) {
-        User res = userRepo.findById(id).orElseThrow(() -> new UserNotFoundException("user by id = " + id + " no found"));
+    public ResponseEntity<User> getUser(@PathVariable("id") Long id) {
+        User res = userRepo.findById(Long.valueOf(1)).orElseThrow(() -> new UserNotFoundException("user by id = " + id + " no found"));
         return new ResponseEntity<>(res, HttpStatus.OK);
+    }
+
+    @GetMapping("/getByName/{nick}")
+    public ResponseEntity<User> getByNick(@PathVariable String nick) {
+        List<User> res = userRepo.findAll().stream().takeWhile(x -> !x.getNick().equals(nick)).collect(Collectors.toList());
+        if (res.isEmpty())
+            return new ResponseEntity<>(new User(nick), HttpStatus.NO_CONTENT);
+        else
+            return new ResponseEntity<>(res.get(0), HttpStatus.OK);
     }
 
     @PostMapping("/add")
