@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    private final UserRepo userRepo;
+    private UserRepo userRepo;
 
     @Autowired
     public UserController(UserRepo userRepo) {
@@ -31,7 +31,7 @@ public class UserController {
     public ResponseEntity<User> getUser(@RequestBody User user) {
         ResponseEntity res = this.userRepo.findAll().stream().noneMatch(
                 x -> x.getNick().equals(user.getNick()) && x.getPassWord().equals(user.getPassWord())
-        )? new ResponseEntity(user, HttpStatus.OK) : null;
+        )? new ResponseEntity(user, HttpStatus.OK) : new ResponseEntity(HttpStatus.NOT_FOUND);
 
         return res;
     }
@@ -52,7 +52,12 @@ public class UserController {
 
     @PostMapping("/add")
     public ResponseEntity<User> adduser(@RequestBody User newuser) {
-        return new ResponseEntity<>(userRepo.save(newuser), HttpStatus.OK);
+        if (!userRepo.existsUserByNickEquals(newuser.getNick())) {
+            return new ResponseEntity<>(userRepo.save(newuser), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
     }
 
     @PostMapping("/addAll")
@@ -93,5 +98,23 @@ public class UserController {
         }
 
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/contains/nick={nick}")
+    public ResponseEntity<User> containsByNick(@PathVariable String nick) {
+        if (this.userRepo.existsUserByNickEquals(nick))
+            return new ResponseEntity<>(new User(Long.valueOf(-1), "Todo OK Jose Luis", "Todo OK"), HttpStatus.OK);
+        else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping("/valid")
+    public ResponseEntity<User> validateUser(@RequestBody User user) {
+        User aux = userRepo.findUserByNickEquals(user.getNick());
+        if (aux != null) {
+            return new ResponseEntity<>(aux, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }

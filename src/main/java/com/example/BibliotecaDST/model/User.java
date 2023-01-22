@@ -1,7 +1,10 @@
 package com.example.BibliotecaDST.model;
 
 import jakarta.persistence.*;
+import org.hibernate.id.factory.spi.GenerationTypeStrategy;
 import org.springframework.lang.NonNull;
+
+import java.util.Objects;
 
 @Entity
 public class User {
@@ -17,7 +20,7 @@ public class User {
 
     public User(Long id, String nick, String passWord) {
         this.id = id;
-        nick = nick;
+        this.nick = nick;
         this.passWord = passWord;
     }
 
@@ -53,9 +56,21 @@ public class User {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return nick.equals(user.nick);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nick);
+    }
+
+    @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
                 ", Nick='" + nick + '\'' +
                 ", passWord='" + passWord + '\'' +
                 '}';
