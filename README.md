@@ -11,7 +11,7 @@ Esta es una plantilla basada en los estándares de la Guía de publicacion de he
 
 <h1 align="center"> Nombre de la herramienta</h1>
 <p align="center"> Logo e imagen o gif de la interfaz principal de la herramienta</p>
-<p align="center"><img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fw7.pngwing.com%2Fpngs%2F322%2F554%2Fpng-transparent-consolidated-library-district-3-business-education-stewartville-public-library-indonesia-digital-home-text-logo-author.png&sp=1674488368Td930eb6b865661bc1677ec5f73963ac83c6711ce7d382ad239ee2ceb145a8863"/></p> 
+<p align="center"><img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ffiles.logoscdn.com%2Fv1%2Fassets%2F13817708%2Foptimized&sp=1674488654T98dd8a26a60434181c6c96a20ea45c880419f0f89c0ec5b03f1a74b7c118860e"/></p> 
 
 ## Tabla de contenidos:
 
