@@ -1,104 +1,102 @@
-![analytics image (flat)](https://raw.githubusercontent.com/vitr/google-analytics-beacon/master/static/badge-flat.gif)
-![analytics](https://www.google-analytics.com/collect?v=1&cid=555&t=pageview&ec=repo&ea=open&dp=/Plantilla-de-repositorio/readme&dt=&tid=UA-4677001-16)
+<h1 align="center">Aplicación Backend-End del Catálogo Digital de la Librería de DST</h1>
 
-## Plantilla de Documentación de Soporte y Uso de herramientas digitales - README.md
-Esta es una plantilla basada en los estándares de la Guía de publicacion de herramientas digitales del BID. Sabemos que no existe un solo estándar para la documentación de soporte y uso de herramientas digitales pero hemos recopilado estas características importantes que debe tener un readme.md para facilitar el uso y amplificar el potencial de impacto de las mismas. Cualquier comentario o recomendación les pedimos generar un issue de consulta o escribirnos directamente a code@iadb.org.
-
-## La plantilla empieza aquí 👇
-
-
-*Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo**. Puedes conocer más sobre la iniciativa del BID en [code.iadb.org](https://code.iadb.org)*
-
-<h1 align="center"> Nombre de la herramienta</h1>
-<p align="center"> Logo e imagen o gif de la interfaz principal de la herramienta</p>
-<p align="center"><img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ffiles.logoscdn.com%2Fv1%2Fassets%2F13817708%2Foptimized&sp=1674488654T98dd8a26a60434181c6c96a20ea45c880419f0f89c0ec5b03f1a74b7c118860e"/></p> 
 
 ## Tabla de contenidos:
 
 ---
 
-- [Badges o escudos](#badges-o-escudos)
 - [Descripción y contexto](#descripción-y-contexto)
-- [Guía de usuario](#guía-de-usuario)
+- [Funcionalidades de la Aplicación](#funcionalidades-de-la-aplicación)
 - [Guía de instalación](#guía-de-instalación)
-- [Cómo contribuir](#cómo-contribuir)
-- [Código de conducta](#código-de-conducta)
+- [Conclusión del Desarrollo](#conclusión)
 - [Autor/es](#autores)
-- [Información adicional](#información-adicional)
-- [Licencia](#licencia)
-- [Limitación de responsabilidades - Solo BID](#limitación-de-responsabilidades)
-
-## Badges o escudos
-
----
-Es común en muchos repositorios open source el uso de badges o escudos para dar visbilidad el uso de microservicios, licencias, descargas, etc. Recomendamos revisar la iniciativa https://shields.io/ donde según consideres necesario podrás generar badges para tu repo.
-
-### Ejemplos de badges
-
-- code coverage percentage: ![coverage](https://img.shields.io/badge/coverage-80%25-yellowgreen)
-- stable release version: ![version](https://img.shields.io/badge/version-1.2.3-blue)
-- package manager release: ![gem](https://img.shields.io/badge/gem-2.2.0-blue)
-- status of third-party dependencies: ![dependencies](https://img.shields.io/badge/dependencies-out%20of%20date-orange)
-- static code analysis grade: ![codacy](https://img.shields.io/badge/codacy-B-green)
-- [SemVer](https://semver.org/) version observance: ![semver](https://img.shields.io/badge/semver-2.0.0-blue)
-- amount of [Liberapay](https://liberapay.com/) donations per week: ![receives](https://img.shields.io/badge/receives-2.00%20USD%2Fweek-yellow)
-- Python package downloads: ![downloads](https://img.shields.io/badge/downloads-13k%2Fmonth-brightgreen)
-- Chrome Web Store extension rating: ![rating](https://img.shields.io/badge/rating-★★★★☆-brightgreen)
-- [Uptime Robot](https://uptimerobot.com) percentage: ![uptime](https://img.shields.io/badge/uptime-100%25-brightgreen)
-
-### Badges que solicitamos:
-
----
-En la iniciativa Código para el Desarrollo solicitamos a los equipos que suman sus herramientas al catálogo de sumar el badge generado por el uso del microservicio de evaluación estática de código SonarCloud.
-
-El badge se ve así y redirige al reporte de evaluación estática del último commit de la herramienta:
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=EL-BID_guia-de-publicacion&metric=alert_status)](https://sonarcloud.io/dashboard?id=EL-BID_guia-de-publicacion)
-
 
 ## Descripción y contexto
 
 ---
-Esto es un archivo README. Debe contener la documentación de soporte uso de la herramienta digital. Las siguientes secciones son las secciones recomendadas que debes poner incluir en cualquier herramienta digital. Puedes descargar este archivo para que te sirva como plantilla.
 
-Asegúrate de empezar este archivo con una breve descripción sobre las funcionalidades y contexto de la herramienta digital. Sé conciso y al grano.
+Al igual que la mayoría de aplicaciones web, se ha separado la lógica de la aplicación dós de dos entidades aisladas entre sí (Front-End y Back-End), que enfrentadas la una con la otra implementa el funcionamiento normal de la aplicación web. Para el desarrollo Back-End de la aplicación, se sigue una arquitectura web del tipo API REST, apolladas sobre repositorios y entidades JPA del modelo haciendo uso de uno de los principales frameworks de desarrollo Back-End de Java `Spring Boot`.
 
-## Guía de usuario
+![](https://www.filepicker.io/api/file/fUQ7OU6CQxmF0pFCiNxu)
+
+
+Spring Data JPA, parte de la gran familia Spring Data, facilita la implementación de repositorios basados en JPA. Este módulo trata del soporte mejorado para las capas de acceso a datos basadas en JPA. Facilita la creación de aplicaciones basadas en Spring que utilicen tecnologías de acceso a datos.
+
+Implementar una capa de acceso a datos de una aplicación ha sido engorroso durante bastante tiempo. Siempre ha habido que escribir demasiado código repetitivo para ejecutar consultas sencillas y realizar paginación y auditoría. Spring Data JPA pretende mejorar significativamente la implementación de capas de acceso a datos reduciendo el esfuerzo a la cantidad realmente necesaria. Como desarrollador, usted escribe las interfaces de su repositorio, incluidos los métodos de búsqueda personalizados, y Spring proporcionará la implementación automáticamente.
+
+![](https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fwww.interviewbit.com%2Fblog%2Fwp-content%2Fuploads%2F2022%2F06%2FSpring-Boot-Workflow-Architecture-1024x614.png&sp=1674672527Te770c3ba0caf23525ed123fe72e247fea31132ff3563cd4813c5a7d5ecff73c3)
+
+Además de lo anterior JPA permite, mediante el uso de notaciones, definir el esquema de la base de datos directamente en las clases Java del modelo de la aplicación. Lo cual nos libera aún más a la hora de trabajar, ya que nos evita tener que lidiar con la implementación de la base de datos manualmente mediante scripts SQL. Otro detalle importante en la implementación del proyecto, ha sido la facilidad con la que se accede y manipulan datos a través de JPA, ya que, el propio framework nos permite definir consultas tradicionales SQl a través de métodos de java, en los que la lógica de la consulta queda definida simplemente en la especificación del método:
+
+Por ejemplo si quisiéramos ofrecer un método en el API para consultar los usuarios cuyo nick contenga algún patrón específico basta con lo siguiente:
+
+![](./src/main/resources/static/jpaOp.gif)   
+
+Mientras que de la forma tradicional en una consulta SQL quedaría de la siguiente forma: 
+
+``` {SQL}
+    SELECT * 
+    FROM users
+    WHERE users.nick LIKE patern;
+```
+
+Finalmente, un último punto importante en el desarrollo de cualquier aplicación de backend, es configurar el arranque de la aplicación de tal forma que esta admita las peticiones lanzadas desde la aplicación de Front-End que "manipula" el usuario. En este caso se ha habilitado un único end-point (la aplicación angular), las cabeceras y métodos HTTP interpretables por la aplicación:
+
+```
+    @Bean
+	public CorsFilter corsFilter() {
+		CorsConfiguration corsConfiguration = new CorsConfiguration();
+		corsConfiguration.setAllowCredentials(true);
+		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
+				"Accept", "Authorization", "Origin, Accept", "X-Requested-With",
+				"Access-Control-Request-Method", "Access-Control-Request-Headers"));
+		corsConfiguration.setExposedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization",
+				"Access-Control-Allow-Origin", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"));
+		corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
+		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
+		return new CorsFilter(urlBasedCorsConfigurationSource);
+	}
+```
+
+## Funcionalidades de la Aplicación
+
 ---
-Explica los pasos básicos sobre cómo usar la herramienta digital. Es una buena sección para mostrar capturas de pantalla o gifs que ayuden a entender la herramienta digital.
+
+* Implementación de métodos CRUD para entidades JPA
+* Generación dinámica de consultas a partir de nombres de métodos de consulta
+* Configuración de las políticas CORS para la interactuación de la aplicación con el Front-End
+* Activación transparente de JPA NamedQueries por métodos de consulta
+* Conexión con la base de datos MySQL
+* Implementación de clases base de dominio que proporcionan propiedades básicas
+* Posibilidad de integrar código de repositorio personalizado
+
 
 ## Guía de instalación
----
-Paso a paso de cómo instalar la herramienta digital. En esta sección es recomendable explicar la arquitectura de carpetas y módulos que componen el sistema.
-
-Según el tipo de herramienta digital, el nivel de complejidad puede variar. En algunas ocasiones puede ser necesario instalar componentes que tienen dependencia con la herramienta digital. Si este es el caso, añade también la siguiente sección.
-
-La guía de instalación debe contener de manera específica:
-- Los requisitos del sistema operativo para la compilación (versiones específicas de librerías, software de gestión de paquetes y dependencias, SDKs y compiladores, etc.).
-- Las dependencias propias del proyecto, tanto externas como internas (orden de compilación de sub-módulos, configuración de ubicación de librerías dinámicas, etc.).
-- Pasos específicos para la compilación del código fuente y ejecución de tests unitarios en caso de que el proyecto disponga de ellos.
-
-### Dependencias
-Descripción de los recursos externos que generan una dependencia para la reutilización de la herramienta digital (librerías, frameworks, acceso a bases de datos y licencias de cada recurso). Es una buena práctica describir las últimas versiones en las que ha sido probada la herramienta digital.
-
-    Puedes usar este estilo de letra diferenciar los comandos de instalación.
-
-## Cómo contribuir
 
 ---
-Esta sección explica a desarrolladores cuáles son las maneras habituales de enviar una solicitud de adhesión de nuevo código (“pull requests”), cómo declarar fallos en la herramienta y qué guías de estilo se deben usar al escribir más líneas de código. También puedes hacer un listado de puntos que se pueden mejorar de tu código para crear ideas de mejora.
 
-## Código de conducta
+En casos normales, el primer paso antes de ejecutar la aplicación sería acudir a `https://start.spring.io` configurar manualmente las dependencias y descargar el esqueleto del proyecto, aunque las clases y componentes de la aplicación ya están hechos es suficiente con clonar el repositorio actual.
+
+Para este caso en particular las dependencias de la aplicación se gestionan a través de Maven con lo que para arrancar la aplicación basta con ejecutar el siguiente comando dentro del directorio raíz del proyecto:
+
+``` sh{background = true}
+./mvn spring-boot:run
+```
+
+Con esto debería ser suficiente para iniciar la aplicación sin problemas, aunque siempre es preferible hacer uso de algún IDE que se encargue de la configuración del entorno par evitar posibles incompatibilidades.
+
+## Conclusión
 
 ---
-El código de conducta establece las normas sociales, reglas y responsabilidades que los individuos y organizaciones deben seguir al interactuar de alguna manera con la herramienta digital o su comunidad. Es una buena práctica para crear un ambiente de respeto e inclusión en las contribuciones al proyecto.
 
-La plataforma Github premia y ayuda a los repositorios dispongan de este archivo. Al crear CODE_OF_CONDUCT.md puedes empezar desde una plantilla sugerida por ellos. Puedes leer más sobre cómo crear un archivo de Código de Conducta (aquí)[https://help.github.com/articles/adding-a-code-of-conduct-to-your-project/]
+Spring Boot y JPA han proporcionado una gran facilidad en la configuración y desarrollo del backend, proporcionando una gran cantidad de herramientas para facilitar el desarrollo. Además, hemos utilizado una arquitectura REST para testear el API usando PostMan, lo que ha permitido una fácil integración con el frontend y una buena escalabilidad del proyecto. En conclusión, el uso de estas tecnologías ha permitido un desarrollo rápido y eficiente del proyecto y ha proporcionado una gran funcionalidad al mismo.
 
-## Autor/es
+## Autor
+
 ---
-Nombra a el/los autor/es original/es. Consulta con ellos antes de publicar un email o un nombre personal. Una manera muy común es dirigirlos a sus cuentas de redes sociales.
 
-## Información adicional
----
-Esta es la sección que permite agregar más información de contexto al proyecto como alguna web de relevancia, proyectos similares o que hayan usado la misma tecnología.
+[Alejandro Téllez Montiel](https://github.com/Alejandro405/bibliotecaDSTApp)           
+Ale.t@uma.es   
+Alejandro405

@@ -14,4 +14,6 @@ public interface UserRepo extends JpaRepository<User, Long> {
 
     Boolean existsUserByNickEquals(String nick);
 
+    List<User> findUsersByNickContainingIgnoreCase(String patern);
+
 }
