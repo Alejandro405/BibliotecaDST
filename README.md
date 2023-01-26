@@ -24,7 +24,7 @@ Spring Data JPA, parte de la gran familia Spring Data, facilita la implementaci�
 
 Implementar una capa de acceso a datos de una aplicación ha sido engorroso durante bastante tiempo. Siempre ha habido que escribir demasiado código repetitivo para ejecutar consultas sencillas y realizar paginación y auditoría. Spring Data JPA pretende mejorar significativamente la implementación de capas de acceso a datos reduciendo el esfuerzo a la cantidad realmente necesaria. Como desarrollador, usted escribe las interfaces de su repositorio, incluidos los métodos de búsqueda personalizados, y Spring proporcionará la implementación automáticamente.
 
-![](https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fwww.interviewbit.com%2Fblog%2Fwp-content%2Fuploads%2F2022%2F06%2FSpring-Boot-Workflow-Architecture-1024x614.png&sp=1674672527Te770c3ba0caf23525ed123fe72e247fea31132ff3563cd4813c5a7d5ecff73c3)
+![](https://www.interviewbit.com/blog/wp-content/uploads/2022/06/Spring-Boot-Workflow-Architecture-1024x614.png)
 
 Además de lo anterior JPA permite, mediante el uso de notaciones, definir el esquema de la base de datos directamente en las clases Java del modelo de la aplicación. Lo cual nos libera aún más a la hora de trabajar, ya que nos evita tener que lidiar con la implementación de la base de datos manualmente mediante scripts SQL. Otro detalle importante en la implementación del proyecto, ha sido la facilidad con la que se accede y manipulan datos a través de JPA, ya que, el propio framework nos permite definir consultas tradicionales SQl a través de métodos de java, en los que la lógica de la consulta queda definida simplemente en la especificación del método:
 
